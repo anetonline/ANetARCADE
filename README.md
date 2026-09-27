@@ -1,3 +1,6 @@
+**A-NET ARCADE**
+v1.2.6
+
 <img width="1331" height="682" alt="image" src="https://github.com/user-attachments/assets/ab3df20d-56ad-4005-b121-9920d0c7df21" />
 
 <img width="1325" height="929" alt="image" src="https://github.com/user-attachments/assets/87618a07-2008-4ca5-88b2-ce73e16c8bdc" />
@@ -10,8 +13,7 @@
 
 <img width="1320" height="920" alt="image" src="https://github.com/user-attachments/assets/86513945-8fa4-41ed-8ca3-441f95126dd6" />
 
-**A-NET ARCADE**
-v1.2.6
+
 **Five Classic Games. One Epic Arcade.**
 
 **A-NET ARCADE v1.2.6 - LINUX x86-64 INSTALL
