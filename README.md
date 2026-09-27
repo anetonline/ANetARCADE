@@ -13,11 +13,10 @@ v1.2.6
 
 <img width="1320" height="920" alt="image" src="https://github.com/user-attachments/assets/86513945-8fa4-41ed-8ca3-441f95126dd6" />
 
-
+#
 **Five Classic Games. One Epic Arcade.**
-
-**A-NET ARCADE v1.2.6 - LINUX x86-64 INSTALL
-==========================================**
+#
+**A-NET ARCADE v1.2.6 - LINUX x86-64 INSTALL**
 
 1. Extract this release into a writable BBS door directory.
 2. chmod +x anetarcade and Run: ./anetarcade --arcade-version
@@ -36,8 +35,7 @@ A cinematic return to BBS gaming: five complete native terminal games, one share
 and builds for Linux, Raspberry Pi, and Windows.
 
 
-**A-NET ARCADE v1.2.6 - SYSOP GUIDE
-=================================**
+**A-NET ARCADE v1.2.6 - SYSOP GUIDE**
 
 CONFIGURATION
 -------------
@@ -113,8 +111,7 @@ Frogger river updates to reduce terminal I/O on older Win32 systems. Test at
 
 
 
-A-NET ARCADE v1.2.6 - PLAYER GUIDE
-=================================
+**A-NET ARCADE v1.2.6 - PLAYER GUIDE**
 
 A-Net Arcade contains five complete native OpenDoors terminal games sharing one
 arcade profile and Hall of Fame.
