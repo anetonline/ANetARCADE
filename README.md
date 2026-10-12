@@ -1,17 +1,3 @@
-**A-NET ARCADE**
-v1.3.0
-
-<img width="1331" height="682" alt="image" src="https://github.com/user-attachments/assets/ab3df20d-56ad-4005-b121-9920d0c7df21" />
-
-<img width="1325" height="929" alt="image" src="https://github.com/user-attachments/assets/87618a07-2008-4ca5-88b2-ce73e16c8bdc" />
-
-<img width="1323" height="950" alt="image" src="https://github.com/user-attachments/assets/8eb7429d-37c5-4317-af51-f5f7834f3508" />
-
-<img width="1329" height="927" alt="image" src="https://github.com/user-attachments/assets/3bce2036-b0c8-4a51-bb17-a81c177ff3ac" />
-
-<img width="1323" height="941" alt="image" src="https://github.com/user-attachments/assets/3c237ce3-f6fe-41af-aad6-85cb38f6c9a8" />
-
-<img width="1320" height="920" alt="image" src="https://github.com/user-attachments/assets/86513945-8fa4-41ed-8ca3-441f95126dd6" />
 <div align="center">
 
 # 🕹️ ANetARCADE
@@ -31,6 +17,19 @@ v1.3.0
 [Visit the ANetARCADE website](https://a-net-online.lol/anetarcade/)
 
 </div>
+
+<img width="1331" height="682" alt="image" src="https://github.com/user-attachments/assets/ab3df20d-56ad-4005-b121-9920d0c7df21" />
+
+<img width="1325" height="929" alt="image" src="https://github.com/user-attachments/assets/87618a07-2008-4ca5-88b2-ce73e16c8bdc" />
+
+<img width="1323" height="950" alt="image" src="https://github.com/user-attachments/assets/8eb7429d-37c5-4317-af51-f5f7834f3508" />
+
+<img width="1329" height="927" alt="image" src="https://github.com/user-attachments/assets/3bce2036-b0c8-4a51-bb17-a81c177ff3ac" />
+
+<img width="1323" height="941" alt="image" src="https://github.com/user-attachments/assets/3c237ce3-f6fe-41af-aad6-85cb38f6c9a8" />
+
+<img width="1320" height="920" alt="image" src="https://github.com/user-attachments/assets/86513945-8fa4-41ed-8ca3-441f95126dd6" />
+
 
 ---
 
