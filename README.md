@@ -16,7 +16,40 @@ v1.2.6
 #
 **Five Classic Games. One Epic Arcade.**
 #
-**A-NET ARCADE v1.2.6 - LINUX x86-64 INSTALL**
+**ANetARCADE 1.3.0 - SHARED GAME LOBBY**
+
+
+Extract the ZIP. Linux/ARM: bash INSTALL-LINUX.sh
+Windows: run ANetARCADE-SETUP.exe. Setup asks for an installation folder,
+configures new installs and asks whether to enable shared live chat.
+Upgrades keep existing configuration, player profiles and local scores.
+If chat.json is already present, chat settings are retained.
+
+[C] opens the same A-Net lobby as PUMPKO and other participating games.
+Chat is hidden when disabled. Counts show active chat-enabled players,
+BBSes and callers currently in chat. Internet chat does not pause gameplay.
+Linux/ARM chat needs curl and CA certificates; installed games need no Python.
+Windows uses native WinHTTP/TLS 1.2 (Windows 7 SP1 or later with TLS support).
+
+For this same BBS, supply the original PUMPKO hub/sync.json path when chat
+setup asks for existing Hub credentials. Do not enroll the same BBS again.
+Chat works independently of score sharing. ANetARCADE scores remain local.
+Configure later with anetarcade --chat-config (anetarcade.exe on Windows).
+
+Fix: the handle prompt now accepts a single Enter on Linux (CR or LF).
+Set the BBS door working directory to the installation directory.
+See installed docs/SHARED-CHAT.txt for controls and details.
+
+
+1.3.0 IBBS-UPDATER rebuild (same public filenames)
+================================================
+Adds optional InterBBS score sharing for all five games, [I] rankings in the
+lobby, and signed sysop updater ANetARCADE-UPDATE. Shared chat remains separate.
+Use --scores-config to enable sharing; reuse existing chat credentials.
+See docs/INTERBBS-SCORES.txt and docs/ONLINE-UPDATES.txt.
+The hub operator must run ENABLE-ARCADE-HUB.py once to enable the five boards.
+Existing profiles, local scores, chat and game configuration are retained.
+Install this rebuild manually; future automatic updates require higher versions.
 
 1. Extract this release into a writable BBS door directory.
 2. chmod +x anetarcade and Run: ./anetarcade --arcade-version
