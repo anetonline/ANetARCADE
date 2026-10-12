@@ -12,195 +12,282 @@ v1.3.0
 <img width="1323" height="941" alt="image" src="https://github.com/user-attachments/assets/3c237ce3-f6fe-41af-aad6-85cb38f6c9a8" />
 
 <img width="1320" height="920" alt="image" src="https://github.com/user-attachments/assets/86513945-8fa4-41ed-8ca3-441f95126dd6" />
+<div align="center">
 
-#
-**Five Classic Games. One Epic Arcade.**
-#
-**ANetARCADE 1.3.0 - SHARED GAME LOBBY**
+# 🕹️ ANetARCADE
+### FIVE CLASSIC GAMES. ONE EPIC ARCADE.
 
+**Dodge traffic. Fight the fleet. Beat the paddle. Chase the next high score.**
 
-Extract the ZIP. Linux/ARM: bash INSTALL-LINUX.sh
-Windows: run ANetARCADE-SETUP.exe. Setup asks for an installation folder,
-configures new installs and asks whether to enable shared live chat.
-Upgrades keep existing configuration, player profiles and local scores.
-If chat.json is already present, chat settings are retained.
+![Version](https://img.shields.io/badge/version-1.3.0-00d9ff?style=for-the-badge)
+![Games](https://img.shields.io/badge/games-5-ff2bd6?style=for-the-badge)
+![ANSI](https://img.shields.io/badge/graphics-CP437%20%2F%20ANSI-55ff77?style=for-the-badge)
+![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20Pi%20%7C%20Windows-ffb52e?style=for-the-badge)
 
-[C] opens the same A-Net lobby as PUMPKO and other participating games.
-Chat is hidden when disabled. Counts show active chat-enabled players,
-BBSes and callers currently in chat. Internet chat does not pause gameplay.
-Linux/ARM chat needs curl and CA certificates; installed games need no Python.
-Windows uses native WinHTTP/TLS 1.2 (Windows 7 SP1 or later with TLS support).
+*Insert coin. Pick your game. Keep the BBS alive.*
 
-For this same BBS, supply the original PUMPKO hub/sync.json path when chat
-setup asks for existing Hub credentials. Do not enroll the same BBS again.
-Chat works independently of score sharing. ANetARCADE scores remain local.
-Configure later with anetarcade --chat-config (anetarcade.exe on Windows).
+[The games](#-pick-your-game) · [Your player card](#-one-player-card-five-games) · [InterBBS scores](#-your-board-your-score-worldwide) · [Shared lobby](#-different-games-same-lobby) · [Installation](#-put-the-arcade-on-your-bbs)
 
-Fix: the handle prompt now accepts a single Enter on Linux (CR or LF).
-Set the BBS door working directory to the installation directory.
-See installed docs/SHARED-CHAT.txt for controls and details.
+[Visit the ANetARCADE website](https://a-net-online.lol/anetarcade/)
 
+</div>
 
-1.3.0 IBBS-UPDATER rebuild (same public filenames)
-================================================
-Adds optional InterBBS score sharing for all five games, [I] rankings in the
-lobby, and signed sysop updater ANetARCADE-UPDATE. Shared chat remains separate.
-Use --scores-config to enable sharing; reuse existing chat credentials.
-See docs/INTERBBS-SCORES.txt and docs/ONLINE-UPDATES.txt.
-The hub operator must run ENABLE-ARCADE-HUB.py once to enable the five boards.
-Existing profiles, local scores, chat and game configuration are retained.
-Install this rebuild manually; future automatic updates require higher versions.
+---
 
-1. Extract this release into a writable BBS door directory.
-2. chmod +x anetarcade and Run: ./anetarcade --arcade-version
-3. Run: ./anetarcade --arcade-config
-4. Configure your BBS to launch the executable with its normal OpenDoors
-   dropfile arguments (for example ANetBBS may use -D%f).
-5. Ensure data/ and any configured high-score export directory are writable.
-6. Enter the door, create an arcade handle, choose difficulty with D, and play.
+**ANetARCADE brings five classic-inspired arcade games to your BBS through OpenDoors.** One persistent player profile ties them together, with local Hall of Fame rankings, adjustable difficulty, optional InterBBS score sharing, and a shared live lobby.
 
-DISPLAY
--------
-79x24 is the classic safe target. OpenDoors-reported 132x37 or larger enables
-131x36 Wide Mode automatically.
+It is native terminal gaming with **CP437 ANSI artwork**, builds for Linux, Raspberry Pi, and Windows, and a sysop updater for signed releases.
 
-A cinematic return to BBS gaming: five complete native terminal games, one shared arcade identity, one Hall of Fame,
-and builds for Linux, Raspberry Pi, and Windows.
+**Created by StingRay · Jerry Reed · A-Net Online**
 
+> **About this release:** the current **1.3.0 IBBS-UPDATER rebuild** adds InterBBS score sharing and the signed updater while retaining the existing 1.3.0 package filenames. Earlier 1.3.0 packages need a manual upgrade to receive these features.
 
-**A-NET ARCADE v1.2.6 - SYSOP GUIDE**
+## 🎮 Pick your game.
 
-CONFIGURATION
--------------
-Run locally from the door directory:
-  Linux/Pi:  ./anetarcade --arcade-config
-  Windows:   anetarcade.exe --arcade-config
+| Game | The challenge | Controls |
+| :--- | :--- | :--- |
+| 🐸 **Frogger 2026** | Cross three traffic lanes, ride the river’s moving logs, and reach HOME. Each level increases the pressure. | Arrows / WASD · **P** pause · **Q** quit |
+| 🚀 **Galaga 2026** | Destroy a three-row alien fleet while dodging return fire. New waves bring a tougher fight. | Left / Right or A / D · Space / F fire · **Q** quit |
+| 🏓 **Pong** | Face the CPU in a race to seven points. Its reaction speed changes with difficulty and match progression. | W / S or Up / Down · **Q** quit |
+| 🐢 **Turtle Bridge** | Deliver a package across five turtles, then return to the bank. Watch their dive countdowns. | Left / Right or A / D · **Q** quit |
+| 🕳️ **Manhole 2026** | Cover the threatened hole before a pedestrian reaches it. Higher levels shorten the reaction window. | Arrows / WASD or 1–4 · **Q** quit |
 
-This sets BBS name, Sysop name, optional high-score export, and export path.
-The door directory and data/ must be writable by the BBS service account.
+### Easy to enter. Hard to leave.
 
-OPENDOORS COMMAND LINE / DROPFILES
-----------------------------------
-ANetARCADE reserves ONLY these standalone private commands:
-  --arcade-config
-  --arcade-version
+Press **D** in the lobby to cycle difficulty:
 
-Everything else is passed to OpenDoors. Standard OpenDoors options such as
--D/-DROPFILE, -C/-CONFIG, -L/-LOCAL, -N/-NODE and -? remain available.
-For ANetBBS, -D%f is valid: ANetBBS expands %f to the generated dropfile path
-before starting the door.
+| Difficulty | Starting lives, where applicable | Score multiplier |
+| :--- | :---: | :---: |
+| **Easy** | 5 | ×1 |
+| **Medium** — default | 3 | ×2 |
+| **Hard** | 2 | ×3 |
 
-DIFFICULTY / SCORING
---------------------
-Players press D in the lobby to choose Easy, Medium, or Hard. Difficulty affects
-starting lives, timing, enemy/hazard speed and reaction windows. Score
-multipliers are Easy x1, Medium x2, Hard x3. Individual games also level up and
-increase challenge during play; milestone bonus lives are implemented where
-appropriate.
+Difficulty changes the actual game: lives, speeds, hazards, and reaction windows. Each game also increases its challenge as play progresses. Milestone bonus lives are available where implemented.
 
-DATA / HALL OF FAME
--------------------
-data/player_<hash>.dat stores handle, per-game plays, personal bests and total
-plays. data/scores.dat is the shared append-only score journal. Hall of Fame
-shows the top five scores for every game.
+## 🪪 One player card. Five games.
 
-HIGH-SCORE EXPORT FORMAT
-------------------------
-When enabled, highscores.asc and highscores.ans are regenerated after a game.
-highscores.ans is ANSI plus RAW IBM CP437 artwork bytes (for example C9/CD/BB,
-BA, C8/BC). It does NOT write UTF-8 box-drawing glyphs. Dynamic BBS and handle
-text is ASCII-sanitized before export so UTF-8 multibyte sequences cannot leak
-into the CP437 ANSI file.
+Create an arcade handle on your first visit and carry it across every game.
 
-TERMINAL GEOMETRY / RENDERING
------------------------------
-Classic safe canvas: 79x24; column 80 is intentionally avoided.
-Wide safe canvas: 131x36 when OpenDoors reports at least 132x37.
-Wide mode is never guessed. If dimensions are unavailable, classic mode is used.
-Realtime games clear once on entry and update moving objects/dirty regions with
-OpenDoors cursor positioning instead of full-screen redraw loops.
+- Up to **24 visible characters**, with `|00`–`|15` pipe colors.
+- Persistent per-game play counts and personal bests.
+- A shared total-play count.
+- A local **Hall of Fame** showing the top five score entries per game.
+- Optional `highscores.asc` and CP437 `highscores.ans` exports for your BBS.
 
-RELEASE PACKAGES
-----------------
-build-all.sh creates separate Linux x64, Raspberry Pi ARM64, Windows x86 and
-Windows x64 release folders/ZIPs. Each receives its own FILE_ID.DIZ, PLAYING.txt,
-SYSOP-GUIDE.txt, platform INSTALL.txt, config example, binary and data folder.
-No machine-specific binary-info/path text file is included in public packages.
-Linux packages include source/ plus build-local.sh as a compatibility fallback
-because prebuilt glibc binaries are not universal across all Linux distributions.
+Your BBS caller identity anchors the profile. Keep the same dropfile/caller configuration when upgrading so players retain their records.
 
+### The lobby
 
-WIN32 / ANIMATION SPEED
------------------------
-SPEED_PERCENT=100 is normal. Valid range: 50 through 200.
-Lower values reduce animation/input delay; higher values increase it.
-Examples: 75 = faster, 100 = normal, 125 = slower.
+| Key | Action |
+| :---: | :--- |
+| **1–5** | Choose a game |
+| **D** | Cycle difficulty |
+| **S** | Local Hall of Fame |
+| **I** | InterBBS scores, when enabled |
+| **C** | Shared chat, when enabled |
+| **H / ?** | Help and controls |
+| **Q** | Return to the BBS |
 
-This changes timing only. It does not change difficulty, scoring, lives, or
-leaderboard multipliers. v1.2.6 also caches unchanged HUD output and batches
-Frogger river updates to reduce terminal I/O on older Win32 systems. Test at
-100 first; use SPEED_PERCENT only for host-specific timing preference.
+## 🏆 Your board. Your score. Worldwide.
 
+Enable **InterBBS score sharing** to compete with callers on other BBSes. Each of the five games has its own leaderboard, keeping paddle victories separate from alien-fleet scores.
 
+Press **I** from the lobby to view the rankings:
 
+- **N** — next game.
+- **B** — previous game.
+- **R** — redraw current results.
+- **Q** — return to the arcade.
 
-**A-NET ARCADE v1.2.6 - PLAYER GUIDE**
+New scores are queued on disk and uploaded by a background worker. Failed uploads remain queued for retry, and the hub deduplicates event IDs. Leaderboards refresh in the background; cached results remain available when the hub cannot be reached.
 
-A-Net Arcade contains five complete native OpenDoors terminal games sharing one
-arcade profile and Hall of Fame.
+**Score hub:** https://scores.a-net.online
 
-LOBBY / DIFFICULTY
-------------------
-1-5 selects a game. S opens Hall of Fame. H opens Help. Q returns to the BBS.
-D cycles EASY -> MEDIUM -> HARD. MEDIUM is the default.
+Setup can reuse existing shared-chat credentials, so an already registered BBS does not need another enrollment. Score sharing and chat are independent options. Disabling score sharing hides the InterBBS menu.
 
-Difficulty changes the actual game mechanics, not just the score:
-  EASY   - 5 starting lives where lives apply, slower/longer reaction windows,
-           x1 score multiplier.
-  MEDIUM - 3 starting lives, standard timing, x2 score multiplier.
-  HARD   - 2 starting lives, faster hazards/enemies, x3 score multiplier.
+<details>
+<summary><strong>Hub operator notes</strong></summary>
 
-FROGGER 2026
-------------
-Arrows/WASD move. Cross three traffic lanes, then ride five alternating river
-lanes to HOME. The frog rides a supporting log. Reaching HOME advances the
-level; traffic/river pressure increases. A bonus life is awarded every 3 levels.
-P pauses. Q quits.
+The five leaderboard IDs are:
 
-GALAGA 2026
------------
-Left/Right or A/D moves. Space/F fires. Destroy the three-row formation while
-aliens fire back. Only the lowest surviving alien in a column may fire. New
-waves increase the level and hostile pressure. A bonus life is awarded every
-3 waves. Q quits.
+| Game | Hub ID |
+| :--- | :--- |
+| Frogger | `anetarcade-frogger` |
+| Galaga | `anetarcade-galaga` |
+| Pong | `anetarcade-pong` |
+| Turtle Bridge | `anetarcade-turtle` |
+| Manhole | `anetarcade-manhole` |
 
-PONG
-----
-W/S or Up/Down moves your paddle two rows per tap. First to 7 wins. CPU reaction
-speed depends on difficulty and improves as the match level advances. Q quits.
+The current hub stores arcade scores under `mode=story` as a compatibility convention; this does not add a Story mode to ANetARCADE. Difficulty multipliers are included in the submitted score, and rankings combine difficulties, like the local Hall of Fame.
 
-TURTLE BRIDGE
--------------
-Left/Right or A/D hops between HOME BANK, five turtles, and TOURIST. Deliver the
-package, then return for another. !3 !2 !1 warns that a turtle is about to dive.
-Higher levels increase dive pressure; difficulty changes warning/reaction time.
-A milestone bonus life is awarded every 4 levels. Q quits.
+The hub operator must enable these IDs. The source includes `ENABLE-ARCADE-HUB.py` for the migrated A-Net hub layout; client sysops do not need to run it. The separate Hub Setup kit also installs the initial signed update files and public update route.
 
-MANHOLE 2026
-------------
-Move the cover with arrows/WASD or 1-4. Watch the pedestrian warning and cover
-the threatened hole before the countdown expires. Higher levels shorten the
-reaction window; difficulty also changes hazard frequency/timing. A milestone
-bonus life is awarded every 4 levels. Q quits.
+Only new scored runs are queued. Existing local score history is not automatically backfilled.
 
-ARCADE HANDLES / HALL OF FAME
------------------------------
-First play creates a handle up to 24 visible characters. Pipe colors |00-|15 are
-supported and do not count toward visible length. Hall of Fame shows the top 5
-scores per game; N=Next, B=Back, Q=Quit.
+</details>
 
-DISPLAY
--------
-Classic terminals use 79x24 safely. When OpenDoors reports at least 132x37,
-Wide Mode uses a 131x36 safe canvas. Realtime animation uses dirty-region
-updates to minimize terminal flashing.
+## 💬 Different games. Same lobby.
+
+An ANetARCADE caller on one BBS. A **PUMPKO** caller on another. One shared room.
+
+Enable optional live chat during setup, then press **C** from the lobby. The status display shows connected players, connected BBSes, and callers in chat.
+
+**Shared lobby:** https://chat.a-net.online
+
+Say **no** to chat during setup and its menu stays hidden. You can enable chat without score sharing, or score sharing without chat.
+
+If your BBS already has hub credentials, reuse them. A fresh directory does not reclaim an existing registered BBS name; lost credentials require recovery or a verified reset by the hub operator.
+
+## 🖥 Native terminal gaming.
+
+ANetARCADE uses **OpenDoors** for BBS integration and terminal input. Gameplay updates moving regions instead of repeatedly clearing the entire screen.
+
+- **Classic mode:** a 79×24 safe canvas.
+- **Wide mode:** a 131×36 safe canvas when OpenDoors reports at least 132×37.
+- **CP437 ANSI exports:** raw IBM character bytes, with dynamic text sanitized for compatibility.
+- **Host timing adjustment:** `SPEED_PERCENT=50–200`; 100 is normal, lower values are faster, higher values are slower. This changes timing, not difficulty or score multipliers.
+
+Wide mode is detected from reported terminal geometry, not guessed.
+
+## 📦 Choose your build.
+
+| Platform | Release package |
+| :--- | :--- |
+| Linux x86-64 | `ANetArcade-1.3.0-linux-x64.zip` |
+| Raspberry Pi / Linux ARM64 | `ANetArcade-1.3.0-pi-arm64.zip` |
+| Windows 32-bit | `ANetArcade-1.3.0-windows-x86.zip` |
+| Windows 64-bit | `ANetArcade-1.3.0-windows-x64.zip` |
+| Source | `ANetArcade-OpenDoors-v1.3.0-source.zip` |
+
+Download builds from the [ANetARCADE website](https://a-net-online.lol/anetarcade/).
+
+Use a **64-bit operating system** for the ARM64 package. Linux online features need HTTPS-capable `curl` and CA certificates. Windows online features use native WinHTTP with TLS 1.2 and require a working certificate trust store.
+
+No Python or PowerShell is required on the installed game client. Python is used for developer packaging tools and the separate hub software.
+
+## 🚀 Put the arcade on your BBS.
+
+1. Download and extract the package for your operating system and architecture.
+2. Run the installer:
+   - **Linux / Pi:** `bash INSTALL-LINUX.sh`
+   - **Windows:** launch `ANetARCADE-SETUP.exe`.
+3. Choose the installation directory and review the BBS identity, score exports, InterBBS score sharing, and live-chat settings.
+4. Add the door to your BBS menu, using the installed folder as its working directory and passing an OpenDoors-compatible caller dropfile.
+
+### Local play
+
+```bash
+# Linux / Raspberry Pi
+./anetarcade -L
+```
+
+```bat
+REM Windows
+anetarcade.exe -L
+```
+
+### Configuration
+
+```bash
+# Full configuration, including optional online features
+./anetarcade --arcade-config
+
+# Configure just one online feature
+./anetarcade --scores-config
+./anetarcade --chat-config
+```
+
+On Windows, use `anetarcade.exe` with the same options.
+
+### Door command examples
+
+```bash
+./anetarcade -D /path/to/BBSDEV.DRP
+```
+
+```bat
+anetarcade.exe -D C:\path\to\DOOR32.SYS
+```
+
+Use your BBS software’s actual dropfile path or substitution. On **ANetBBS**, `-D %f` passes the generated dropfile to the game.
+
+**Linux permissions:** the BBS service account needs write access to `data/` and read access to its configuration, including private credential files. Install as the BBS account where practical, or assign suitable ownership and group access afterward. Do not make secret files world-readable.
+
+## 🔄 Keep your players. Update your arcade.
+
+Back up the door, close active ANetARCADE sessions, and run the new installer into the **existing directory**. Profiles, local scores, and existing configuration are retained. Setup lets you review settings and opt into the new features.
+
+**Do not delete the game directory to upgrade.**
+
+The current rebuild adds a signed sysop updater:
+
+```bash
+# Linux / Raspberry Pi
+./ANetARCADE-UPDATE --check
+./ANetARCADE-UPDATE
+```
+
+```bat
+REM Windows
+ANetARCADE-UPDATE.exe --check
+ANetARCADE-UPDATE.exe
+```
+
+The updater validates the release signature, download size, and SHA-256 hash before running the installer. It gates new sessions and refuses installation while an ANetARCADE process is active. Update mode backs up payload files and restores them on failure while preserving settings and player data.
+
+No BBS or VM reboot is required. Public update hosting must be configured by the hub operator first.
+
+> **Same-version rebuild:** manually install this updated 1.3.0 package to introduce the updater. It does not automatically replace another 1.3.0 installation. Future automatic releases must use a higher version, such as 1.3.1.
+
+See [InterBBS setup](docs/INTERBBS-SCORES.txt) and [online updates](docs/ONLINE-UPDATES.txt).
+
+## 🛠 Build from source.
+
+The source includes the bundled OpenDoors tree, game code, shared chat, score-sharing worker, updater, and installer tooling.
+
+```bash
+# Build all four platform packages
+bash build-all.sh
+
+# Or select one platform
+bash build-all.sh linux-x64
+bash build-all.sh pi-arm64
+bash build-all.sh windows-x86
+bash build-all.sh windows-x64
+```
+
+Build tools include CMake, make, Python 3, and the appropriate compilers: `musl-gcc` for Linux x64, GNU ARM64 cross tools for Pi, and MinGW for Windows. These are developer dependencies rather than installed-client requirements.
+
+## 📖 Player and sysop reference.
+
+| Topic | Guide |
+| :--- | :--- |
+| Controls, difficulty, and profiles | [PLAYING.txt](docs/PLAYING.txt) |
+| BBS integration and configuration | [SYSOP-GUIDE.txt](docs/SYSOP-GUIDE.txt) |
+| InterBBS scores | [INTERBBS-SCORES.txt](docs/INTERBBS-SCORES.txt) |
+| Shared lobby | [SHARED-CHAT.txt](docs/SHARED-CHAT.txt) |
+| Signed updates | [ONLINE-UPDATES.txt](docs/ONLINE-UPDATES.txt) |
+| Release notes | [RELEASE-NOTES.txt](docs/RELEASE-NOTES.txt) |
+| Build and test status | [RELEASE-VALIDATION.txt](docs/RELEASE-VALIDATION.txt) |
+
+Linux startup, leaderboard navigation, upload retry/deduplication, and updater rollback were tested. ARM64 startup was checked under emulation. Windows x86/x64 builds compiled successfully; consult the release validation notes for runtime testing limits.
+
+For bug reports, include your build marker, OS/architecture, BBS software, dropfile, terminal client, and steps to reproduce. The rebuild’s marker is `ANETARCADE-1.3.0-IBBS-UPDATER`.
+
+**Never commit credential JSON files, player data, shared secrets, or private signing keys.**
+
+## ❤️ Built for the BBS.
+
+Created by **StingRay (Jerry Reed)** at **[A-Net Online](https://a-net.online)**. **[OpenDoors](https://github.com/RealDeuce/OpenDoors)** provides the door interface; its bundled license and notices are included in [OPENDOORS-LICENSE.txt](docs/OPENDOORS-LICENSE.txt).
+
+The games celebrate classic arcade ideas with native BBS implementations. ANetARCADE is an independent A-Net project.
+
+<div align="center">
+
+**Five games. One player card. A whole network of challengers.**
+
+*Some legends never die. They just find another BBS.*
+
+🐸 🚀 🏓 🐢 🕳️
+
+</div>
