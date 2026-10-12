@@ -1,0 +1,22 @@
+ANetARCADE 1.3.0 - Sysop Updater
+==============================
+Linux/Pi: ./ANetARCADE-UPDATE --check
+          ./ANetARCADE-UPDATE
+Windows:  ANetARCADE-UPDATE.exe --check
+          double-click ANetARCADE-UPDATE.exe for the Y/N prompt
+The updater uses https://scores.a-net.online/updates/anetarcade/<platform>.txt
+and its .sig. It verifies the original pinned RSA release key, download size
+and SHA256 before running the verified installer. No certificate bypasses.
+It blocks new sessions through .anetarcade-maintenance and refuses installation
+while an ANetARCADE process is active. No VM/BBS reboot or caller termination.
+Update mode backs up payload files, restores them on failure, and leaves
+anetarcade.cfg, chat.json, scores.json, profiles and scores untouched.
+The updater binary/script is a stable bootstrap and is preserved by updates.
+Public update hosting must be configured; missing manifests report a download
+failure. Use game ID anetarcade in A-Net Hub Control's publishing screen.
+
+This rebuild deliberately remains version 1.3.0 at the sysop's request, with
+unchanged public ZIP names. It must be installed manually on older 1.3.0 builds
+to introduce the updater. A same-version release is not an automatic upgrade.
+Future online releases must use a HIGHER version, e.g. 1.3.1. Do not replace
+signed installers already published under the same version with changed bytes.

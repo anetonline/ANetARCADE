@@ -1,0 +1,68 @@
+A-NET ARCADE v1.3.0 - PLAYER GUIDE
+=================================
+
+A-Net Arcade contains five complete native OpenDoors terminal games sharing one
+arcade profile and Hall of Fame.
+
+LOBBY / DIFFICULTY
+------------------
+1-5 selects a game. S opens Hall of Fame. H opens Help. Q returns to the BBS.
+D cycles EASY -> MEDIUM -> HARD. MEDIUM is the default.
+
+Difficulty changes the actual game mechanics, not just the score:
+  EASY   - 5 starting lives where lives apply, slower/longer reaction windows,
+           x1 score multiplier.
+  MEDIUM - 3 starting lives, standard timing, x2 score multiplier.
+  HARD   - 2 starting lives, faster hazards/enemies, x3 score multiplier.
+
+FROGGER 2026
+------------
+Arrows/WASD move. Cross three traffic lanes, then ride five alternating river
+lanes to HOME. The frog rides a supporting log. Reaching HOME advances the
+level; traffic/river pressure increases. A bonus life is awarded every 3 levels.
+P pauses. Q quits.
+
+GALAGA 2026
+-----------
+Left/Right or A/D moves. Space/F fires. Destroy the three-row formation while
+aliens fire back. Only the lowest surviving alien in a column may fire. New
+waves increase the level and hostile pressure. A bonus life is awarded every
+3 waves. Q quits.
+
+PONG
+----
+W/S or Up/Down moves your paddle two rows per tap. First to 7 wins. CPU reaction
+speed depends on difficulty and improves as the match level advances. Q quits.
+
+TURTLE BRIDGE
+-------------
+Left/Right or A/D hops between HOME BANK, five turtles, and TOURIST. Deliver the
+package, then return for another. !3 !2 !1 warns that a turtle is about to dive.
+Higher levels increase dive pressure; difficulty changes warning/reaction time.
+A milestone bonus life is awarded every 4 levels. Q quits.
+
+MANHOLE 2026
+------------
+Move the cover with arrows/WASD or 1-4. Watch the pedestrian warning and cover
+the threatened hole before the countdown expires. Higher levels shorten the
+reaction window; difficulty also changes hazard frequency/timing. A milestone
+bonus life is awarded every 4 levels. Q quits.
+
+ARCADE HANDLES / HALL OF FAME
+-----------------------------
+First play creates a handle up to 24 visible characters. Pipe colors |00-|15 are
+supported and do not count toward visible length. Hall of Fame shows the top 5
+scores per game; N=Next, B=Back, Q=Quit.
+
+DISPLAY
+-------
+Classic terminals use 79x24 safely. When OpenDoors reports at least 132x37,
+Wide Mode uses a 131x36 safe canvas. Realtime animation uses dirty-region
+updates to minimize terminal flashing.
+
+INTERBBS SCORES AND SHARED LOBBY
+-------------------------------
+When score sharing is enabled, I opens the five InterBBS leaderboards.
+N = next game, B = previous game, R = redraw, Q = return.
+When live chat is enabled, C opens the cross-game shared lobby.
+Both menu options are hidden when their feature is disabled.

@@ -1,0 +1,70 @@
+A-NET ARCADE v1.3.0 - RELEASE NOTES
+==================================
+
+v1.3.0 is the first release-complete OpenDoors edition.
+
+- Five native games in one lobby: Frogger, Galaga, Pong, Turtle Bridge, Manhole.
+- Easy / Medium / Hard difficulty selectable with D from the lobby.
+- Difficulty changes game mechanics and applies x1 / x2 / x3 score multipliers.
+- Per-game level progression and milestone bonus lives where appropriate.
+- Galaga organized waves, player fire, hostile alien fire and progressive pressure.
+- Turtle Bridge and Manhole warning/countdown mechanics.
+- Flicker-reduced dirty-region rendering for realtime terminal animation.
+- Classic 79x24 safe mode and OpenDoors-detected 131x36 Wide Mode.
+- Pipe-color arcade handles, shared profiles, Top-5 Hall of Fame.
+- Optional highscores.asc and raw CP437/ANSI highscores.ans exports.
+- Standalone --arcade-config and --arcade-version do not steal OpenDoors options.
+- Four-target build/release factory: Linux x64, Pi ARM64, Win32, Win64.
+
+v1.3.0 Win32 terminal correction
+-------------------------------
+- Fixed Windows/DOOR32 screen corruption caused by repeatedly writing to the
+  physical bottom row of an 80x24 terminal. Dynamic HUD output now uses row 23.
+- Moved game instructions/status away from row 24.
+- Galaga no longer erases/redraws the player ship and entire formation every
+  animation tick; this reduces Win32 flicker and terminal traffic.
+- Turtle Bridge now honors SPEED_PERCENT like the other animated games.
+- Goodbye/return screen remains visible for a real 3 seconds before exit.
+- Linux behavior and the 132x37 wide-mode geometry remain supported.
+
+v1.3.0 OpenDoors Win32 integration
+----------------------------------
+- Windows uses OpenDoors native WinMain/local-GUI path and OpenDoors::Static.
+- Windows -L is intended to open the OpenDoors local-mode GUI, not cmd.exe.
+- ODRes.rc is linked into Windows builds for toolbar/dialog resources.
+- Linux/Pi local mode remains terminal based.
+- Cursor/caret hidden during the arcade session and restored on exit.
+- Frogger controls moved to row 22 outside the playable frog area.
+
+v1.3.0 input + Pong playfield polish
+------------------------------------
+- "Press any key" pauses now clear stale OpenDoors type-ahead before showing
+  the prompt and consume exactly one new key event.
+- Frogger's Pause prompt uses the same fresh-key handling.
+- Pong's animated playfield is now strictly rows 4-20.
+- Pong instructions stay on row 22 and the HUD stays on row 23.
+- Pong paddles are clamped so their 7-row sprites cannot enter row 22.
+- Pong ball bounces at row 20 and can no longer erase/cross instruction text.
+
+v1.3.0 Enter-key normalization
+------------------------------
+- Fixed the remaining Win32/OpenDoors pause behavior where ordinary keys
+  dismissed "Press any key" immediately but Enter could require a second press.
+- Enter CR/LF is normalized as one logical pause keypress.
+- Frogger Pause now uses the same shared pause-key path so pause behavior is
+  consistent throughout ANetARCADE.
+- Retains the v1.3.0 native OpenDoors Win32 GUI integration and v1.3.0 Pong
+  playfield/UI separation.
+
+v1.3.0 C-to-Continue
+--------------------
+- Standardized ANetARCADE pause screens on "Press C to continue..."
+- Generic pauses now explicitly wait for C/c instead of relying on Enter or
+  OpenDoors' platform-specific handling of the Enter key.
+- This intentionally sidesteps the Win32 local-mode behavior where Enter
+  required two presses while ordinary keys worked on the first press.
+- Retains the native OpenDoors Windows GUI, cursor handling, Frogger row
+  protection, and Pong playfield/UI separation from the previous releases.
+
+1.3.0 IBBS-UPDATER rebuild: optional scores, five leaderboards, persistent
+upload queue, signed updater and unattended installer rollback. Same ZIP names.

@@ -1,0 +1,17 @@
+ANetARCADE 1.3.0 IBBS-UPDATER rebuild - validation
+================================================
+Public version and filenames remain 1.3.0 as requested.
+Linux x64 static musl, Pi ARM64 static, Windows x86/x64 cross builds.
+PASS: Linux local startup, single LF handle entry, profile save and exit.
+PASS: Pi ARM64 startup under qemu-aarch64.
+PASS: actual terminal I menu, all five leaderboard pages and navigation.
+PASS: five signed uploads to fixture score hub, duplicate deduplication,
+      offline persistent queue, credential reuse and Linux file permissions.
+PASS: real RSA update check, tamper rejection, active-caller refusal,
+      hash/size rejection, installer rollback and preserved configuration/data.
+PASS: installer shell syntax and ZIP integrity.
+Windows builds compile; no Windows runtime available in this environment.
+Test Windows 7 locally and through your BBS before public production release.
+No changes have been deployed to the production hub by these build tools.
+Run the included ENABLE-ARCADE-HUB.py on the migrated hub once.
+Online updater hosting must be configured separately; no same-version update.

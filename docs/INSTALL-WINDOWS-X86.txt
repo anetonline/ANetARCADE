@@ -1,0 +1,22 @@
+ANetARCADE 1.3.0 - SHARED GAME LOBBY
+
+Extract the ZIP. Linux/ARM: bash INSTALL-LINUX.sh
+Windows: run ANetARCADE-SETUP.exe. Setup asks for an installation folder,
+configures new installs and asks whether to enable shared live chat.
+Upgrades keep existing configuration, player profiles and local scores.
+If chat.json is already present, chat settings are retained.
+
+[C] opens the same A-Net lobby as PUMPKO and other participating games.
+Chat is hidden when disabled. Counts show active chat-enabled players,
+BBSes and callers currently in chat. Internet chat does not pause gameplay.
+Linux/ARM chat needs curl and CA certificates; installed games need no Python.
+Windows uses native WinHTTP/TLS 1.2 (Windows 7 SP1 or later with TLS support).
+
+For this same BBS, supply the original PUMPKO hub/sync.json path when chat
+setup asks for existing Hub credentials. Do not enroll the same BBS again.
+Chat works independently of score sharing. ANetARCADE scores remain local.
+Configure later with anetarcade --chat-config (anetarcade.exe on Windows).
+
+Fix: the handle prompt now accepts a single Enter on Linux (CR or LF).
+Set the BBS door working directory to the installation directory.
+See installed docs/SHARED-CHAT.txt for controls and details.

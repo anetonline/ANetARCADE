@@ -1,0 +1,42 @@
+A-NET SHARED GAME LOBBY
+
+Enable live chat during setup, or run the game with --chat-config later.
+Chat has its own chat.json setting and works independently of score sharing.
+When disabled, no chat option or online counts appear in the game menu.
+When enabled, press C from the main game menu to enter the common lobby.
+
+Everyone joins the SAME lobby across games and BBSes. Handles, BBS names,
+and game names identify messages. Pipe colors are stripped from handles.
+Enter sends a message (maximum 160 printable ASCII characters); Backspace
+edits; /who refreshes the counts; /quit or Escape returns to your game.
+Terminal escape sequences and OpenDoors markup are not accepted in messages.
+Long messages wrap to the terminal width. The latest 16 display lines show.
+
+Menu counts: active chat-enabled players across participating games, distinct
+BBSes, and callers currently in chat. A caller on the same BBS appearing in
+multiple games is counted once. Gameplay checks in every 10 seconds; chat
+updates about every 2 seconds. Disconnected sessions expire after 45 seconds.
+These counts do not include unrelated BBS callers or chat-disabled games.
+
+Chat requests run in a background worker. A down Hub does not block game
+input; the menu displays unavailable/reconnecting rather than a zero count.
+Up to eight messages can wait for delivery. If the queue is full, wait before
+trying again. Accepted messages are deduplicated during network retries.
+
+Default server: https://chat.a-net.online (outbound HTTPS port 443).
+No inbound ports need opening on the BBS. Linux/ARM uses curl and system CA
+certificates; Windows uses WinHTTP with verified TLS 1.2. Games need no Python.
+
+Credentials: setup first reuses hub/sync.json in the game directory. For
+ANetARCADE on the same BBS, enter the original PUMPKO hub/sync.json path when
+asked. This copies the enrolled identity and secret into private chat.json;
+it does not change score settings or checkpoints. If no credentials exist,
+setup can enroll a NEW BBS at the Score Hub. Existing names never receive a
+replacement secret; restore/reuse original credentials for those names.
+Keep chat.json, credential files and their backups private. Linux setup uses
+0600. Windows inherits the installation directory's access permissions.
+
+Upgrades preserve existing chat settings. Old installations without chat.json
+are asked whether to enable it. Answering No hides chat; it can be enabled
+later with --chat-config. Existing scores and profiles are retained.
+The shared chat service must be deployed before production chat can connect.

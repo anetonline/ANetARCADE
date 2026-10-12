@@ -1,0 +1,34 @@
+ANetARCADE 1.3.0 - InterBBS Scores (IBBS-UPDATER rebuild)
+=======================================================
+Enable score sharing with --scores-config or during --arcade-config.
+The setup reuses credentials in chat.json or hub/sync.json; a BBS already
+registered must reuse its original credentials. No directory deletion needed.
+Scores use scores.json, separate from chat.json. Disabling one doesn't disable
+the other. The lobby displays [I] INTERBBS SCORES only when enabled.
+[I] opens five leaderboard pages: N next, B back, R redraw, Q return.
+The leaderboard is refreshed by a worker roughly once per minute per game.
+Cached results remain available during an outage. No networking runs on the
+OpenDoors drawing thread. The worker can take several seconds to stop on exit.
+Each completed score is queued as a unique JSON event under data/interbbs-queue.
+The worker retries failed uploads; the hub deduplicates event IDs. Pending
+scores survive restarts. Only new runs are uploaded; no historical backfill.
+Color codes and terminal controls are removed from public player names.
+
+Hub IDs:
+ anetarcade-frogger / anetarcade-galaga / anetarcade-pong
+ anetarcade-turtle / anetarcade-manhole
+Each is a separate leaderboard. Existing hub schema uses mode=story for arcade
+scores; this is a storage convention, not an additional story mode in Arcade.
+Scores retain existing difficulty multipliers. Rankings combine difficulties,
+like the local Hall of Fame; no separate difficulty boards in this rebuild.
+The hub operator must enable these five IDs using ENABLE-ARCADE-HUB.py before
+publishing this build. The helper preserves all existing registrations/scores.
+No Python or PowerShell is needed on client installations. Linux/Pi requires
+curl with HTTPS support; Windows uses native WinHTTP with TLS 1.2.
+
+Permission setup on Linux:
+Run setup as the account used by your BBS whenever possible. scores.json has
+credentials and is private. If installed as another account, give the BBS
+service account read access with an appropriate shared group and mode 640.
+The BBS account needs write access to data/ and its queue directory.
+Never make secret JSON files world-readable.
