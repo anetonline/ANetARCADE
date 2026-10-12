@@ -1,5 +1,5 @@
 **A-NET ARCADE**
-v1.2.6
+v1.3.0
 
 <img width="1331" height="682" alt="image" src="https://github.com/user-attachments/assets/ab3df20d-56ad-4005-b121-9920d0c7df21" />
 
