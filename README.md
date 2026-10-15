@@ -100,7 +100,6 @@ Press **I** from the lobby to view the rankings:
 
 New scores are queued on disk and uploaded by a background worker. Failed uploads remain queued for retry, and the hub deduplicates event IDs. Leaderboards refresh in the background; cached results remain available when the hub cannot be reached.
 
-**Score hub:** https://scores.a-net.online
 
 Setup can reuse existing shared-chat credentials, so an already registered BBS does not need another enrollment. Score sharing and chat are independent options. Disabling score sharing hides the InterBBS menu.
 
@@ -131,7 +130,6 @@ An ANetARCADE caller on one BBS. A **PUMPKO** caller on another. One shared room
 
 Enable optional live chat during setup, then press **C** from the lobby. The status display shows connected players, connected BBSes, and callers in chat.
 
-**Shared lobby:** https://chat.a-net.online
 
 Say **no** to chat during setup and its menu stays hidden. You can enable chat without score sharing, or score sharing without chat.
 
